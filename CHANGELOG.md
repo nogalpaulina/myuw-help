@@ -1,5 +1,17 @@
 # myuw-help versions
 
+## 1.5.1
+
+2020-01-15
+
+* Fixes dialog opening to `position:fixed` the dialog ( [#20][] )
+
+## 1.5.0
+
+2020-01-15
+
+* Adds keyboard trapping to dialog opened upon clicking myuw-help
+
 ## 1.4.0
 
 ### Added
@@ -33,3 +45,6 @@
 ### Changed
 
 * Dialog now determines its position when opened for more reliable positioning
+
+
+[#20]: https://github.com/myuw-web-components/myuw-help/pull/20

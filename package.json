@@ -1,6 +1,6 @@
 {
   "name": "@myuw-web-components/myuw-help",
-  "version": "1.5.0",
+  "version": "1.5.1",
   "description": "",
   "module": "dist/myuw-help.min.mjs",
   "browser": "dist/myuw-help.min.js",
