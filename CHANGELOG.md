@@ -1,5 +1,11 @@
 # myuw-help versions
 
+## 1.5.2
+
+2020-03-05
+
+* Cross browser support for styles outside of :host() pseudo-class which isn't supported by older IE and Edge versions
+
 ## 1.5.1
 
 2020-01-15
