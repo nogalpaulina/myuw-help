@@ -11,14 +11,6 @@ pipeline {
       }
     }
 
-    stage('Analyze') {
-      steps {
-        withCredentials([string(credentialsId: 'sonarqube-analysis-token', variable: 'TOKEN')]) {
-          sh 'npm run sonar -- -Dsonar.host.url=https://ia-tools-sonarqube.doit.wisc.edu/ -Dsonar.login="$TOKEN"'
-        }
-      }
-    }
-
     stage('Publish PR Version') {
       when { changeRequest() }
       environment {
