@@ -1,5 +1,11 @@
 # myuw-help versions
 
+## 1.5.3
+
+2020-04-23
+
+* Adjust position of the shadow behind the dialog, to ensure entire content is covered
+
 ## 1.5.2
 
 2020-03-05
