@@ -10,57 +10,57 @@
     display: none;
   }
 
-  :host([show-default-content]) #myuw-help__default-content {
+  :host([show-default-content]) #myuw-feedback__default-content {
     display: block;
   }
 
-  :host([show-button]) #help-button {
+  :host([show-button]) #feedback-button {
     display: flex;
   }
 
-  :host([open]) #myuw-help__dialog {
+  :host([open]) #myuw-feedback__dialog {
     opacity: 1;
     display: block;
     position: fixed;
   }
 
-  :host([open]) #myuw-help__shadow {
+  :host([open]) #myuw-feedback__shadow {
     opacity: 1;
     height: 100%;
   }
 
   /* Duplicate styles to appease firefox */
-  myuw-help {
+  myuw-feedback {
     display: flex;
     font-style: inherit;
     font-variant: inherit;
     font-family: inherit;
   }
 
-  myuw-help[hidden] {
+  myuw-feedback[hidden] {
     display: none;
   }
 
-  myuw-help[show-default-content] #myuw-help__default-content {
+  myuw-feedback[show-default-content] #myuw-feedback__default-content {
     display: block;
   }
 
-  myuw-help[show-button] #help-button {
+  myuw-feedback[show-button] #feedback-button {
     display: flex;
   }
 
-  myuw-help[open] #myuw-help__dialog {
+  myuw-feedback[open] #myuw-feedback__dialog {
     opacity: 1;
     display: block;
     position: fixed;
   }
 
-  myuw-help[open] #myuw-help__shadow {
+  myuw-feedback[open] #myuw-feedback__shadow {
     opacity: 1;
     height: 100%;
   }
 
-  #myuw-help__dialog {
+  #myuw-feedback__dialog {
     display: none;
     max-width: 80%;
     min-width: 300px;
@@ -85,13 +85,13 @@
     z-index: 101;
   }
 
-  #myuw-help__heading {
+  #myuw-feedback__heading {
     display: flex;
     align-content: center;
     justify-content: space-between;
   }
 
-  #myuw-help__title {
+  #myuw-feedback__title {
     color: rgba(0, 0, 0, 0.8);
     font-size: 20px;
     font-weight: 500;
@@ -99,7 +99,7 @@
     letter-spacing: 0.03px;
   }
 
-  #myuw-help__content {
+  #myuw-feedback__content {
     font-weight: 400;
     font-size: 16px;
     color: rgba(0, 0, 0, .8);
@@ -109,13 +109,13 @@
     padding: 8px 0 16px;
   }
 
-  #myuw-help__default-content ul {
+  #myuw-feedback__default-content ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
   }
 
-  #myuw-help__default-content ul li {
+  #myuw-feedback__default-content ul li {
     transition: background 0.4s cubic-bezier(.25, .8, .25, 1);
     display: flex;
     justify-content: flex-start;
@@ -125,11 +125,11 @@
     padding: 0 16px 0 6px;
   }
 
-  #myuw-help__default-content ul li:hover {
+  #myuw-feedback__default-content ul li:hover {
     background: rgba(158, 158, 158, 0.2);
   }
 
-  #myuw-help__default-content a {
+  #myuw-feedback__default-content a {
     text-decoration: none;
     color: #0479a8;
     /* TODO: use styles variables */
@@ -140,7 +140,7 @@
     align-items: center;
   }
 
-  #myuw-help__default-content .material-icons {
+  #myuw-feedback__default-content .material-icons {
     width: 24px;
     min-height: 24px;
     min-width: 24px;
@@ -148,7 +148,7 @@
     color: #434343;
   }
 
-  #myuw-help__shadow {
+  #myuw-feedback__shadow {
     position: fixed;
     top: 0;
     left: 0;
@@ -160,7 +160,7 @@
     z-index: 100;
   }
 
-  #myuw-help__close-button {
+  #myuw-feedback__close-button {
     min-width: 48px;
     max-width: 48px;
     min-height: 48px;
@@ -197,11 +197,11 @@
     border-radius: 50%;
   }
 
-  #myuw-help__close-button:hover {
+  #myuw-feedback__close-button:hover {
     background-color: rgba(158, 158, 158, 0.2);
   }
 
-  #help-button {
+  #feedback-button {
     display: none;
     justify-content: center;
     align-content: center;
@@ -223,47 +223,43 @@
     transition: background-color .3s cubic-bezier(.35, 0, .25, 1);
   }
 
-  #help-icon {
+  #feedback-icon {
     color: var(--myuw-primary-color, #fff);
     fill: var(--myuw-primary-color, #fff);
     height: 30px;
     width: 30px;
   }
 
-  #help-button:hover {
+  #feedback-button:hover {
     background-color: rgba(0, 0, 0, 0.2);
   }
 
-  #help-button:focus,
-  #help-button:active {
+  #feedback-button:focus,
+  #feedback-button:active {
     outline: 2px solid #5e9ed6;
     outline: -webkit-focus-ring-color auto 5px;
   }
 
   @media all and (min-width: 481px) and (max-width: 840px) {
-    #myuw-help__dialog {
+    #myuw-feedback__dialog {
       width: 400px;
     }
   }
 
   @media all and (min-width: 841px) {
-    #myuw-help__dialog {
+    #myuw-feedback__dialog {
       width: 600px;
     }
   }
 </style>
-<button id="help-button" aria-label="Open help dialog">
-  <svg id="help-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-    <path
-      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41 0-1.1-.9-2-2-2s-2 .9-2 2H8c0-2.21 1.79-4 4-4s4 1.79 4 4c0 .88-.36 1.68-.93 2.25z" />
-    <path d="M0 0h24v24H0z" fill="none" />
-  </svg>
+<button id="feedback-button" aria-label="Open feedback dialog">
+  <svg id="feedback-icon" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M0 0h24v24H0z" fill="none"/><path d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-7 12h-2v-2h2v2zm0-4h-2V6h2v4z"/></svg>
 </button>
 
-<div id="myuw-help__dialog" role="dialog" aria-labelledby="myuw-help__title" aria-modal="true">
-  <div id="myuw-help__heading">
-    <h1 id="myuw-help__title"></h1>
-    <button id="myuw-help__close-button" aria-label="Close help dialog">
+<div id="myuw-feedback__dialog" role="dialog" aria-labelledby="myuw-feedback__title" aria-modal="true">
+  <div id="myuw-feedback__heading">
+    <h1 id="myuw-feedback__title"></h1>
+    <button id="myuw-feedback__close-button" aria-label="Close feedback dialog">
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
         <path
           d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z" />
@@ -271,28 +267,16 @@
       </svg>
     </button>
   </div>
-  <div id="myuw-help__content">
-    <slot name="myuw-help-content">
-      <div id="myuw-help__default-content">
-        <ul>
-          <li>
-            <a href="tel:608-264-4357">Call the help desk</a>
-          </li>
-          <li>
-            <a href="mailto:help@doit.wisc.edu">Email the help desk</a>
-          </li>
-          <li>
-            <a href="https://it.wisc.edu">Get help another way</a>
-          </li>
-          <li>
-            <a href="https://outages.doit.wisc.edu/">Check the Outages page</a>
-          </li>
-          <li>
-            <a href="https://kb.wisc.edu/">Search the KnowledgeBase</a>
-          </li>
-        </ul>
+  <div id="myuw-feedback__content">
+    <slot name="myuw-feedback-content">
+      <div id="myuw-feedback__default-content">
+        <p>Please tell us what you think about the new all-in-one, integrated home for MyUW widgets.</p>
+        <div id="dialog-actions">
+          <a class="dialog-action" target="_blank" rel="noopener noreferrer" href="#">
+            Give Feedback</a>
+        </div>
       </div>
     </slot>
   </div>
 </div>
-<div id="myuw-help__shadow"></div>
+<div id="myuw-feedback__shadow"></div>

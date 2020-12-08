@@ -50,9 +50,9 @@ pipeline {
         sh 'git commit -m "Tagging v$VERSION-dist for $VERSION"'
         sh 'git tag v$VERSION-dist'
         withCredentials([string(credentialsId: 'github-api-token', variable: 'TOKEN')]) {
-          sh 'git push https://adi-ia-jenkins:$TOKEN@github.com/myuw-web-components/myuw-help.git --tags'
+          sh 'git push https://adi-ia-jenkins:$TOKEN@github.com/myuw-web-components/myuw-feedback.git --tags'
           sh 'git checkout -B gh-pages'
-          sh 'git push https://adi-ia-jenkins:$TOKEN@github.com/myuw-web-components/myuw-help.git gh-pages --force'
+          sh 'git push https://adi-ia-jenkins:$TOKEN@github.com/myuw-web-components/myuw-feedback.git gh-pages --force'
         }
       }
     }

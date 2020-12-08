@@ -1,14 +1,14 @@
-import tpl from './myuw-help.html';
+import tpl from './myuw-feedback.html';
 
-class MyUWHelp extends HTMLElement {
+class MyUWfeedback extends HTMLElement {
 
   static get elementName() {
-    return 'myuw-help';
+    return 'myuw-feedback';
   }
 
   static get observedAttributes() {
     return [
-      'myuw-help-title',
+      'myuw-feedback-title',
       'open',
       'show-button',
       'show-default-content'
@@ -28,15 +28,15 @@ class MyUWHelp extends HTMLElement {
     this.attachShadow({ mode: 'open' });
     this.shadowRoot.appendChild(this.constructor.template.content.cloneNode(true));
     this.$customPosition={};
-    this.titleHeadingElement=this.shadowRoot.getElementById('myuw-help__title');
-    this.$button=this.shadowRoot.getElementById('help-button');
-    this.$dialog=this.shadowRoot.getElementById('myuw-help__dialog');
-    this.contentSlotElement=this.shadowRoot.querySelector('slot[name=myuw-help-content]');
-    this.$backdrop=this.shadowRoot.getElementById('myuw-help__shadow');
-    this.$dialogCloseButton=this.shadowRoot.getElementById('myuw-help__close-button');
+    this.titleHeadingElement=this.shadowRoot.getElementById('myuw-feedback__title');
+    this.$button=this.shadowRoot.getElementById('feedback-button');
+    this.$dialog=this.shadowRoot.getElementById('myuw-feedback__dialog');
+    this.contentSlotElement=this.shadowRoot.querySelector('slot[name=myuw-feedback-content]');
+    this.$backdrop=this.shadowRoot.getElementById('myuw-feedback__shadow');
+    this.$dialogCloseButton=this.shadowRoot.getElementById('myuw-feedback__close-button');
     this.eventListeners=[
-      { target: document, type: 'set-myuw-help-position', handler: event => this.handleDocumentSetHelpPosition(event) },
-      { target: document, type: 'show-myuw-help', handler: event => this.handleDocumentShowHelp(event) },
+      { target: document, type: 'set-myuw-feedback-position', handler: event => this.handleDocumentSetfeedbackPosition(event) },
+      { target: document, type: 'show-myuw-feedback', handler: event => this.handleDocumentShowfeedback(event) },
       { target: this.$backdrop, type: 'click', handler: event => this.handleBackdropClick(event) },
       { target: this.$button, type: 'click', handler: event => this.handleButtonClick(event) },
       { target: this.$dialog, type: 'keydown', handler: event => this.handleDialogKeydown(event) },
@@ -72,7 +72,7 @@ class MyUWHelp extends HTMLElement {
 
   attributeChangedCallback(name, oldValue, newValue) {
     switch (name) {
-      case 'myuw-help-title':
+      case 'myuw-feedback-title':
         this.titleHeadingElement.innerHTML=newValue;
         break;
       case 'open':
@@ -108,12 +108,12 @@ class MyUWHelp extends HTMLElement {
     event.preventDefault();
   }
 
-  handleDocumentShowHelp(event) {
+  handleDocumentShowfeedback(event) {
     this.toggle();
     event.preventDefault();
   }
 
-  handleDocumentSetHelpPosition(event) {
+  handleDocumentSetfeedbackPosition(event) {
     if (event.detail&&event.detail.position) {
       this.$customPosition=event.detail.position;
     }
@@ -244,6 +244,6 @@ class MyUWHelp extends HTMLElement {
 
 }
 
-if (customElements.get(MyUWHelp.elementName)===undefined) {
-  customElements.define(MyUWHelp.elementName, MyUWHelp);
+if (customElements.get(MyUWfeedback.elementName)===undefined) {
+  customElements.define(MyUWfeedback.elementName, MyUWfeedback);
 }

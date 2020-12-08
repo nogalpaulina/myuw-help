@@ -2,8 +2,8 @@ import html from 'rollup-plugin-html';
 import minify from 'rollup-plugin-minify-es';
 import babel from 'rollup-plugin-babel';
 
-let fileName = 'myuw-help';
-let objName = 'MyUWHelp';
+let fileName = 'myuw-feedback';
+let objName = 'MyUWfeedback';
 
 let plugins = {
   full: [

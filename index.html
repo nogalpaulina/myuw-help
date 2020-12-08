@@ -11,7 +11,7 @@
   .demo__button-box {
     margin: 36px 48px;
   }
-  .demo__help-button {
+  .demo__feedback-button {
     font-size: 22px;
     padding: 6px 12px;
     min-width: 84px;
@@ -23,13 +23,22 @@
     box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2), 0 1px 1px 0 rgba(0,0,0,0.14), 0 2px 1px -1px rgba(0,0,0,0.12);
     transition: all 0.2s cubic-bezier(.25,.8,.25,1);
   }
-  .demo__help-button:hover {
+  .demo__feedback-button:hover {
     cursor: pointer;
     box-shadow: 0 4px 10px 0 rgba(0,0,0,0.2);
     background: rgb(241, 241, 241);
   }
-  .demo__help-button:focus {
+  .demo__feedback-button:focus {
     outline: none;
+  }
+  #dialog-actions {
+    margin-top: 2.8em;
+  }
+  .dialog-action {
+    color: rgba(255,255,255,0.87);
+    background-color: rgb(4,121,168);
+    padding: 10px;
+    text-decoration: none;
   }
 </style>
 
@@ -39,9 +48,9 @@
 <script type="module">
   import "https://cdn.my.wisc.edu/@myuw-web-components/myuw-app-styles@latest/myuw-app-styles.min.mjs";
   import "https://unpkg.com/@myuw-web-components/myuw-app-bar@^1?module";
-  import "./dist/myuw-help.mjs";
+  import "./dist/myuw-feedback.mjs";
   window.setCustomPosition = () => {
-    document.dispatchEvent(new CustomEvent('set-myuw-help-position', {
+    document.dispatchEvent(new CustomEvent('set-myuw-feedback-position', {
       detail: {
         position: {
           left: '100px',
@@ -50,25 +59,25 @@
       }
     }));
   }
-  window.getHelp = () => {
-    document.dispatchEvent(new Event('show-myuw-help'));
+  window.giveFeedback = () => {
+    document.dispatchEvent(new Event('show-myuw-feedback'));
   }
 </script>
 
-<myuw-app-bar theme-name="MyUW" app-name="Help and Feedback">
-  <myuw-help myuw-help-title="Help is on the way!" slot="myuw-help" show-button>
-    <div slot="myuw-help-content">
-      <p>Put whatever content you want here!</p>
-      <ul>
-        <li>Lists are fine</li>
-        <li>So is any other HTML</li>
-      </ul>
+<myuw-app-bar theme-name="MyUW" app-name="Feedback">
+  <myuw-feedback myuw-feedback-title="Feedback" slot="myuw-feedback" show-button>
+    <div slot="myuw-feedback-content">
+      <p>Please tell us what you think about the new all-in-one, integrated home for MyUW widgets.</p>
+      <div id="dialog-actions">
+        <a class="dialog-action" target="_blank" rel="noopener noreferrer" href="#">
+          Give Feedback</a>
+      </div>
     </div>
-  </myuw-help>
+  </myuw-feedback>
 </myuw-app-bar>
 <div class="demo__container">
   <div class="demo__button-box">
-    <button class="demo__help-button" onclick="getHelp()">You can also click me for help!</button>
-    <button class="demo__help-button" onclick="setCustomPosition()">Use a custom position</button>
+    <button class="demo__feedback-button" onclick="giveFeedback()">Click me to open the dialog!</button>
+    <button class="demo__feedback-button" onclick="setCustomPosition()">Use a custom position</button>
   </div>
 </div>

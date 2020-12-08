@@ -1,62 +1,7 @@
-# myuw-help versions
+# myuw-feedback versions
 
-## 1.5.3
+## 1.0.0
 
-2020-04-23
-
-* Adjust position of the shadow behind the dialog, to ensure entire content is covered
-
-## 1.5.2
-
-2020-03-05
-
-* Cross browser support for styles outside of :host() pseudo-class which isn't supported by older IE and Edge versions
-
-## 1.5.1
-
-2020-01-15
-
-* Fixes dialog opening to `position:fixed` the dialog ( [#20][] )
-
-## 1.5.0
-
-2020-01-15
-
-* Adds keyboard trapping to dialog opened upon clicking myuw-help
-
-## 1.4.0
-
-### Added
-
-* Delivery pipeline and docs for contributors
-
-## 1.3.2
-
-### Fixed
-
-* Fixed positioning of dialog on mobile and some browsers (now checks for more consistent positioning)
-
-## 1.3.1
-
-### Fixed
-
-* Removed a typo that caused a javascript error.
-
-## 1.3.0
-
-### Added
-
-* Added support for sending a custom dialog position as part of the `set-myuw-help-position` CustomEvent
-
-## 1.2.0
-
-### Added
-
-* Added top bar button with attribute to show it (`show-bar-button`)
-
-### Changed
-
-* Dialog now determines its position when opened for more reliable positioning
-
+* MyUW Feedback Web Component has been created based on the 1.5.3 version of existing MyUW Help Web Component, and modified so that developers can use this similar functionality within the same application without conflicts.
 
 [#20]: https://github.com/myuw-web-components/myuw-help/pull/20
